@@ -1,0 +1,46 @@
+{
+    "Fabric MCP Server (Local)": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+            "-y",
+            "@microsoft/fabric-mcp@latest",
+            "server",
+            "start",
+            "--mode",
+            "all"
+        ]
+    },
+    "Real-Time Intelligence MCP (Local)": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+            "microsoft-fabric-rti-mcp"
+        ],
+        "env": {
+            "FABRIC_API_BASE": "https://api.fabric.microsoft.com/v1",
+            "KUSTO_SERVICE_URI": "https://help.kusto.windows.net/",
+            "KUSTO_SERVICE_DEFAULT_DB": "Samples"
+        }
+    },
+    "Power BI Authoring MCP (Local)": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+            "-y",
+            "@microsoft/powerbi-modeling-mcp@latest",
+            "--start"
+        ]
+    },
+    "Microsoft Learn MCP (Helper)": {
+        "url": "https://learn.microsoft.com/api/mcp",
+        "type": "http"
+    },
+    "MarkItDown MCP (Helper)": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+            "markitdown-mcp"
+        ]
+    }
+}
