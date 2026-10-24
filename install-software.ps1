@@ -83,7 +83,7 @@ if (-not $isAdmin) {
 
     Write-Warning "Not running as Administrator. Attempting elevation via UAC prompt..."
 
-    $elevationArgs = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $PSCommandPath)
+    $elevationArgs = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "`"$PSCommandPath`"")
     foreach ($boundParameter in $PSBoundParameters.GetEnumerator()) {
         if ($boundParameter.Value -is [System.Management.Automation.SwitchParameter]) {
             if ($boundParameter.Value.IsPresent) {
