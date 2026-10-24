@@ -118,7 +118,7 @@ if ([string]::IsNullOrWhiteSpace($configText)) {
     throw "Install configuration file is empty: $configPath"
 }
 
-$config = $configText | ConvertFrom-Json -Depth 10
+$config = $configText | ConvertFrom-Json
 if (-not $config.wingetPackages -or $config.wingetPackages.Count -eq 0) {
     throw "Install configuration must include at least one winget package in 'wingetPackages'."
 }
