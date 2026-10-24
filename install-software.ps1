@@ -83,7 +83,7 @@ if (-not $isAdmin) {
 
     Write-Warning "Not running as Administrator. Attempting elevation via UAC prompt..."
 
-    $elevationArgs = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $PSCommandPath)
+    $elevationArgs = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "`"$PSCommandPath`"")
     foreach ($boundParameter in $PSBoundParameters.GetEnumerator()) {
         if ($boundParameter.Value -is [System.Management.Automation.SwitchParameter]) {
             if ($boundParameter.Value.IsPresent) {
@@ -118,7 +118,7 @@ if ([string]::IsNullOrWhiteSpace($configText)) {
     throw "Install configuration file is empty: $configPath"
 }
 
-$config = $configText | ConvertFrom-Json -Depth 10
+$config = $configText | ConvertFrom-Json
 if (-not $config.wingetPackages -or $config.wingetPackages.Count -eq 0) {
     throw "Install configuration must include at least one winget package in 'wingetPackages'."
 }
