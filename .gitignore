@@ -1,0 +1,16 @@
+# Python virtual environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+
+# Logs and temp files
+*.log
+*.tmp
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Keep extension recommendations, ignore local VS Code workspace settings
+.vscode/*
+!.vscode/extensions.json

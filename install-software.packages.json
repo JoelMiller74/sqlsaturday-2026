@@ -1,0 +1,8 @@
+{
+  "wingetPackages": [
+    "Microsoft.PowerShell",
+    "astral-sh.uv",
+    "OpenJS.NodeJS",
+    "Microsoft.DotNet.SDK.8"
+  ]
+}
